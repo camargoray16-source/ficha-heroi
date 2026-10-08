@@ -41,7 +41,7 @@ Link para o protótipo do projeto:
 
 . **Online (GitHub Pages):**
    - **GitHub Pages:** [Clique aqui para acessar o site]https://camargoray16-source.github.io/ficha-heroi/
-   - **Repositório GitHub:** [Acesse o código-fonte aqui](https://github.com/seuusuario/nome-do-repositorio) *(Substitua pelo link do seu repositório)*
+   - **Repositório GitHub:** [Acesse o código-fonte aqui]https://github.com/camargoray16-source/ficha-heroi
 
 ---
 
