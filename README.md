@@ -27,7 +27,7 @@ O projeto foi organizado para apresentar:
 
 ---
 
-## 🎨 Protótipo (Figma ou Similar)
+## 🎨 Protótipo 
 
 Link para o protótipo do projeto:
 - "o prototipo esta disponivel em prototipo.pdf na pasta do projeto"
@@ -36,8 +36,7 @@ Link para o protótipo do projeto:
 
 ## 🚀 Acesso ao Projeto / Como Executar
 
-. **Localmente:** 
-   Baixe os ficheiros do repositório ou a pasta compactada e clique duas vezes no ficheiro `index.html` para abri-lo em qualquer navegador.
+   
 
 . **Online (GitHub Pages):**
    - **GitHub Pages:** [Clique aqui para acessar o site]https://camargoray16-source.github.io/ficha-heroi/
@@ -45,11 +44,7 @@ Link para o protótipo do projeto:
 
 ---
 
-## 📸 Capturas de Tela
 
-> *(Adicione aqui os prints do seu projeto rodando no navegador)*
-
----
 
 ## 📄 Licença
 
@@ -62,5 +57,5 @@ Este projeto é de uso educacional, criado como parte da disciplina **Tecnologia
 **Fernanda Ray de Camargo**  
 - **RA: 268222**   
 - **Turma: Turma A 2semestre**   
-- **E-mail:** camargo.ray16@gmail.com
+- **E-mail:camargo.ray16@gmail.com** 
 - **GitHub:  ** 
