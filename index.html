@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliseu - Guardião da Aliança</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="header-principal">
+    <div class="logo">
+      <i class="fa-solid fa-compass-drafting"></i>
+      <div>
+        <span class="nome-logo">ELISEU</span>
+        <span class="subtitulo-logo">Guardião da Aliança</span>
+      </div>
+    </div>
+    
+    <nav class="menu-navegacao">
+      <a href="#sobre" class="link-nav ativo"><i class="fa-solid fa-open"></i> Início</a>
+      <a href="#atributos" class="link-nav"><i class="fa-solid fa-star"></i> Atributos</a>
+      <a href="#inventario" class="link-nav"><i class="fa-solid fa-bag-shopping"></i> Inventário</a>
+      <a href="#guilda" class="link-nav"><i class="fa-solid fa-users"></i>  Contato com guilda</a>
+    </nav>
+
+    <div class="citacao-topo">
+      "A verdadeira força não está na espada, mas naquilo que guia o coração."
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+
+    <!-- HERO / SOBRE O HERÓI -->
+    <section id="sobre" class="secao-hero">
+      <div class="hero-banner">
+        <img src="imagens/eliseu segurando o cajado.png" alt="Eliseu" class="hero-img-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-info">
+          <h1 class="hero-titulo">ELISEU</h1>
+          <p class="hero-subtitulo">Guardião da Aliança</p>
+
+          <div class="hero-tags">
+            <div class="tag-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div>
+                <small>Classe</small>
+                <strong>Profeta Místico</strong>
+              </div>
+            </div>
+            <div class="tag-item">
+              <i class="fa-solid fa-star"></i>
+              <div>
+                <small>Nível</small>
+                <strong>25</strong>
+              </div>
+            </div>
+            <div class="tag-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <div>
+                <small>Função</small>
+                <strong>Mago / Suporte</strong>
+              </div>
+            </div>
+            <div class="tag-item">
+              <i class="fa-solid fa-crown"></i>
+              <div>
+                <small>Título</small>
+                <strong>O Guardião dos Milagres</strong>
+              </div>
+            </div>
+          </div>
+
+          <blockquote class="citacao-hero">
+            "A verdadeira força não está na espada, mas naquilo que guia o coração."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE + ATRIBUS/HABILIDADES -->
+    <section class="secao-dupla-topo">
+      <!-- Bloco Sobre o Herói -->
+      <div id="atributos" class="bloco-card card-moldura">
+        <h2><i class="fa-solid fa-book-open"></i> Sobre o Herói</h2>
+        <div class="sobre-conteudo">
+          <div class="sobre-img-box">
+            <img src="imagens/eliseu segurando o cajado.png" alt="Eliseu Retrato">
+          </div>
+          <div class="sobre-texto">
+            <p>Eliseu é um jovem profeta que recebeu a missão de proteger seu povo e utilizar seus conhecimentos espirituais para ajudar aqueles que precisam.</p>
+            <p>Durante sua jornada, ele descobriu que seus maiores poderes não vinham de armas, mas de sua fé, sabedoria e capacidade de proteger e curar seus aliados.</p>
+            <p>Agora, como Guardião da Aliança, Eliseu percorre diferentes regiões do reino enfrentando desafios, ajudando comunidades e buscando conhecimento para fortalecer seus poderes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco Atributos e Habilidades -->
+      <div class="bloco-card card-moldura">
+        <h2><i class="fa-solid fa-star"></i> Atributos & Habilidades</h2>
+        <div class="grid-atributos-habilidades">
+          
+          <!-- Atributos -->
+          <div class="coluna-atributos">
+            <h3><i class="fa-solid fa-star"></i> Atributos</h3>
+            
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-book-open icon-blue"></i> Sabedoria</span>
+                <span>95%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill blue" style="width: 95%;"></div></div>
+            </div>
+
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-wand-magic-sparkles icon-purple"></i> Poder Espiritual</span>
+                <span>90%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill purple" style="width: 90%;"></div></div>
+            </div>
+
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-heart icon-green"></i> Cura</span>
+                <span>85%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill green" style="width: 85%;"></div></div>
+            </div>
+
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-shield-halved icon-orange"></i> Defesa</span>
+                <span>70%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill orange" style="width: 70%;"></div></div>
+            </div>
+
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-bolt icon-orange-light"></i> Velocidade</span>
+                <span>60%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill orange-light" style="width: 60%;"></div></div>
+            </div>
+
+            <div class="item-bar">
+              <div class="bar-info">
+                <span><i class="fa-solid fa-crown icon-teal"></i> Liderança</span>
+                <span>80%</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill teal" style="width: 80%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Habilidades -->
+          <div class="coluna-habilidades">
+            <h3>Habilidades</h3>
+            
+            <div class="hab-item">
+              <div class="hab-icon blue-bg"><i class="fa-solid fa-droplet"></i></div>
+              <div>
+                <strong>Purificação</strong>
+                <p>Remove efeitos negativos dos aliados e restaura parte de sua energia.</p>
+              </div>
+            </div>
+
+            <div class="hab-item">
+              <div class="hab-icon yellow-bg"><i class="fa-solid fa-jar"></i></div>
+              <div>
+                <strong>Multiplicação</strong>
+                <p>Cria recursos mágicos para ajudar aliados durante uma missão.</p>
+              </div>
+            </div>
+
+            <div class="hab-item">
+              <div class="hab-icon shield-bg"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <strong>Proteção Espiritual</strong>
+                <p>Cria uma barreira que reduz o dano recebido.</p>
+              </div>
+            </div>
+
+            <div class="hab-item">
+              <div class="hab-icon purple-bg"><i class="fa-solid fa-eye"></i></div>
+              <div>
+                <strong>Visão do Profeta</strong>
+                <p>Permite perceber perigos ocultos e descobrir caminhos secretos.</p>
+              </div>
+            </div>
+
+            <div class="hab-item">
+              <div class="hab-icon green-bg"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div>
+                <strong>Toque da Cura</strong>
+                <p>Recupera a vida de um aliado.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVENTÁRIO + STATUS -->
+    <section id="inventario" class="secao-dupla-meio">
+      <!-- Inventário em 4 colunas como no protótipo -->
+      <div class="bloco-card card-moldura inventario-bloco">
+        <h2><i class="fa-solid fa-bag-shopping"></i> Inventário</h2>
+        <div class="grid-4-colunas">
+
+          <div class="card-item-prototipo">
+            <div class="img-box-prototipo">
+              <img src="imagens/manto.png" alt="Manto do Guardião">
+            </div>
+            <h3>Manto do Guardião</h3>
+            <span class="raridade lendario">Lendário</span>
+            <div class="estrelas">★★★</div>
+            <p>Um manto mágico que aumenta a resistência do personagem contra ataques espirituais.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="img-box-prototipo">
+              <img src="imagens/vaso.png" alt="Vaso da Abundância">
+            </div>
+            <h3>Vaso da Abundância</h3>
+            <span class="raridade raro">Raro</span>
+            <div class="estrelas">★★</div>
+            <p>Um recipiente capaz de produzir recursos durante situações de necessidade.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="img-box-prototipo">
+              <img src="imagens/pergaminho.png" alt="Pergaminho da Sabedoria">
+            </div>
+            <h3>Pergaminho da Sabedoria</h3>
+            <span class="raridade epico">Épico</span>
+            <div class="estrelas">★★★</div>
+            <p>Aumenta temporariamente o atributo de Sabedoria.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="img-box-prototipo">
+              <img src="imagens/cajado.png" alt="Cajado do Profeta">
+            </div>
+            <h3>Cajado do Profeta</h3>
+            <span class="raridade lendario">Lendário</span>
+            <div class="estrelas">★★★</div>
+            <p>Canaliza a energia espiritual do Guardião.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Status do Personagem -->
+      <div class="bloco-card card-moldura status-bloco">
+        <h2><i class="fa-solid fa-heart"></i> Status do Personagem</h2>
+        <div class="status-lista">
+
+          <div class="status-row">
+            <i class="fa-solid fa-heart icon-red"></i>
+            <div class="status-bar-container">
+              <div class="status-head">
+                <span>Vida</span>
+                <span>850 / 1000</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill red" style="width: 85%;"></div></div>
+            </div>
+          </div>
+
+          <div class="status-row">
+            <i class="fa-solid fa-wand-magic-sparkles icon-purple"></i>
+            <div class="status-bar-container">
+              <div class="status-head">
+                <span>Energia Espiritual</span>
+                <span>920 / 1000</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill purple" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <div class="status-row">
+            <i class="fa-solid fa-shield-halved icon-orange"></i>
+            <div class="status-bar-container">
+              <div class="status-head">
+                <span>Defesa</span>
+                <span>700 / 1000</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill orange" style="width: 70%;"></div></div>
+            </div>
+          </div>
+
+          <div class="status-row">
+            <i class="fa-solid fa-hand-sparkles icon-blue"></i>
+            <div class="status-bar-container">
+              <div class="status-head">
+                <span>Experiência</span>
+                <span>2.450 / 3.000</span>
+              </div>
+              <div class="bar-bg"><div class="bar-fill blue" style="width: 80%;"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONQUISTAS + GUILDA -->
+    <section id="conquistas" class="secao-dupla-baixo">
+      <!-- Conquistas em 4 colunas -->
+      <div class="bloco-card card-moldura conquistas-bloco">
+        <h2><i class="fa-solid fa-trophy"></i> Conquistas</h2>
+        <div class="grid-4-colunas">
+
+          <div class="card-item-prototipo">
+            <div class="icon-conquista"><i class="fa-solid fa-shield-cat"></i></div>
+            <h3>Guardião da Aliança</h3>
+            <p>Protegeu uma comunidade durante uma grande ameaça.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="icon-conquista"><i class="fa-solid fa-droplet"></i></div>
+            <h3>Senhor das Águas</h3>
+            <p>Purificou águas contaminadas usando seus poderes.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="icon-conquista"><i class="fa-solid fa-jar"></i></div>
+            <h3>Milagre da Abundância</h3>
+            <p>Ajudou uma família em uma situação de necessidade.</p>
+          </div>
+
+          <div class="card-item-prototipo">
+            <div class="icon-conquista"><i class="fa-solid fa-eye"></i></div>
+            <h3>Visão do Profeta</h3>
+            <p>Descobriu um perigo oculto antes que seus aliados fossem surpreendidos.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contato com a Guilda -->
+      <div id="guilda" class="bloco-card card-moldura guilda-bloco">
+        <h2><i class="fa-solid fa-users"></i> Contato com a Guilda</h2>
+        <p class="guilda-sub">Entre em contato e faça parte da nossa jornada!</p>
+        
+        <button class="btn-guilda">Entrar em contato</button>
+
+        <div class="links-guilda-grid">
+          <a href="https://discord.com" target="_blank" class="link-guilda-item">
+            <i class="fa-brands fa-discord"></i>
+            <div>
+              <strong>Discord</strong>
+              <small>/guildaeliseu</small>
+            </div>
+          </a>
+
+          <a href="https://github.com" target="_blank" class="link-guilda-item">
+            <i class="fa-brands fa-github"></i>
+            <div>
+              <strong>GitHub</strong>
+              <small>/eliseu-guardiao</small>
+            </div>
+          </a>
+
+          <a href="mailto:contato@guildaeliseu.com" class="link-guilda-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>E-mail</strong>
+              <small>contato@guildaeliseu.com</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape-principal">
+    <p>✦ Juntos por um reino mais forte ✦ Guilda Eliseu ✦</p>
+  </footer>
+
+</body>
+</html>
