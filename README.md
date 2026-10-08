@@ -40,7 +40,7 @@ Link para o protótipo do projeto:
    Baixe os ficheiros do repositório ou a pasta compactada e clique duas vezes no ficheiro `index.html` para abri-lo em qualquer navegador.
 
 . **Online (GitHub Pages):**
-   - **GitHub Pages:** [Clique aqui para acessar o site](https://seuusuario.github.io/nome-do-repositorio/) *(Substitua pelo seu link do GitHub Pages, se houver)*
+   - **GitHub Pages:** [Clique aqui para acessar o site]https://camargoray16-source.github.io/ficha-heroi/
    - **Repositório GitHub:** [Acesse o código-fonte aqui](https://github.com/seuusuario/nome-do-repositorio) *(Substitua pelo link do seu repositório)*
 
 ---
@@ -63,4 +63,4 @@ Este projeto é de uso educacional, criado como parte da disciplina **Tecnologia
 - **RA: 268222**   
 - **Turma: Turma A 2semestre**   
 - **E-mail:** camargo.ray16@gmail.com
-- **GitHub:** [https://github.com/seuusuario](https://github.com/seuusuario)
+- **GitHub:  ** 
