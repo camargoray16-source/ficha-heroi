@@ -426,7 +426,7 @@ body {
 }
 
 /* GUILDA */
-.guilda-sub {
+guilda-sub {
     font-size: 0.8rem;
     color: var(--cor-texto-mutado);
     margin-top: -10px;
@@ -434,15 +434,19 @@ body {
 }
 
 .btn-guilda {
-    width: 100%;
-    padding: 10px;
-    background: linear-gradient(180deg, #d97706, #92400e);
-    border: 1px solid var(--cor-borda-dourada);
-    border-radius: 6px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 15px;
+  display: block;                  /* Faz o link comportar-se como um bloco e respeitar as margens */
+  width: 100%;
+  padding: 12px;                   /* Aumenta ligeiramente o espaço interno */
+  background: linear-gradient(180deg, #d97706, #92400e);
+  border: 1px solid var(--cor-borda-dourada);
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  text-align: center;              /* Centraliza o texto dentro do botão */
+  text-decoration: none;           /* Remove o sublinhado do link */
+  cursor: pointer;
+  margin-top: 15px;                /* Cria espaço em cima do botão */
+  margin-bottom: 25px;             /* Empurra os ícones do Discord/GitHub para baixo */
 }
 
 .links-guilda-grid {
@@ -463,16 +467,75 @@ body {
     color: var(--cor-texto-dourado);
 }
 
-.link-guilda-item strong {
-    display: block;
-    font-size: 0.8rem;
+/* ===== ESTILIZAÇÃO DO FORMULÁRIO DE CONTATO ===== */
+
+/* Espaçamento entre cada campo do formulário */
+.campo {
+  display: flex;
+  flex-direction: column; /* Rótulo por cima e campo por baixo */
+  margin-bottom: 18px;    /* Afasta um campo do outro */
+  text-align: left;
 }
 
-.link-guilda-item small {
-    color: var(--cor-texto-mutado);
-    font-size: 0.65rem;
+/* Estilo do rótulo (texto explicativo) */
+.campo label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--cor-texto-principal, #e2e8f0);
 }
 
+/* Estilo padronizado das caixas de entrada (Inputs, Select e Textarea) */
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #1e293b;                /* Fundo escuro */
+  border: 1px solid var(--cor-borda-dourada, #475569);
+  border-radius: 6px;
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-sizing: border-box;                    /* Impede o campo de sair para fora do card */
+  transition: border-color 0.3s ease;
+}
+
+/* Destaque ao clicar no campo */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #d97706;                     /* Borda dourada ao focar */
+}
+
+/* Fundo das opções do menu suspenso */
+.campo select option {
+  background-color: #0f172a;
+  color: white;
+}
+
+/* Organização dos botões no fundo */
+.botoes-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-guilda-voltar {
+  display: block;
+  text-align: center;
+  color: var(--cor-texto-mutado, #94a3b8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+.btn-guilda-voltar:hover {
+  color: white;
+}
+
+  
 /* RODAPÉ */
 .rodape-principal {
     text-align: center;
