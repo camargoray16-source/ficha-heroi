@@ -39,8 +39,8 @@ Link para o protótipo do projeto:
    
 
 . **Online (GitHub Pages):**
-   - **GitHub Pages:** [Clique aqui para acessar o site]https://camargoray16-source.github.io/ficha-heroi/
-   - **Repositório GitHub:** [Acesse o código-fonte aqui]https://github.com/camargoray16-source/ficha-heroi
+   - GitHub Pages: [Clique aqui para acessar o site]https://camargoray16-source.github.io/ficha-heroi/
+   - Repositório GitHub: [Acesse o código-fonte aqui]https://github.com/camargoray16-source/ficha-heroi
 
 ---
 
@@ -48,7 +48,7 @@ Link para o protótipo do projeto:
 
 ## 📄 Licença
 
-Este projeto é de uso educacional, criado como parte da disciplina **Tecnologia Web**.
+Este projeto é de uso educacional, criado como parte da disciplina Tecnologia Web.
 
 ---
 
@@ -58,4 +58,4 @@ Este projeto é de uso educacional, criado como parte da disciplina **Tecnologia
 - **RA: 268222**   
 - **Turma: Turma A 2semestre**   
 - **E-mail:camargo.ray16@gmail.com** 
-- **GitHub:  ** 
+
