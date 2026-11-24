@@ -545,3 +545,154 @@ guilda-sub {
     font-size: 0.85rem;
     margin-top: 20px;
 }
+/* ==========================================================
+   PARTE 2 — ESTADOS DINÂMICOS (o JavaScript alterna as classes)
+   ========================================================== */
+
+.bar-fill { transition: width 0.5s ease; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--cor-texto-dourado); outline-offset: 2px; }
+.btn-guilda:hover { filter: brightness(1.15); }
+button.btn-guilda { font-family: inherit; font-size: 0.95rem; }
+.btn-guilda:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Cabeçalho: saudação, tema e hambúrguer */
+.header-direita { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.saudacao { font-family: 'Cinzel', serif; color: var(--cor-texto-dourado); font-size: 0.95rem; }
+.btn-tema, .btn-secundario, .btn-filtro {
+    background: #1a2744; color: var(--cor-texto-principal); font-family: inherit;
+    border: 1px solid var(--cor-borda-dourada); border-radius: 6px; cursor: pointer;
+    padding: 6px 12px; font-size: 0.8rem; transition: 0.3s;
+}
+.btn-tema:hover, .btn-secundario:hover, .btn-filtro:hover { color: var(--cor-texto-dourado); }
+.btn-menu {
+    display: none;
+    background: none;
+    color: var(--cor-texto-dourado);
+    border: 1px solid var(--cor-borda-dourada);
+    border-radius: 6px;
+    font-size: 1.3rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease; 
+}
+
+/* hover = mouse em cima | active = toque no celular | aria-expanded = menu aberto */
+.btn-menu:hover,
+.btn-menu:active,
+.btn-menu[aria-expanded="true"] {
+    background: #1a2744;
+    color: #ffffff;
+}
+
+/* "Ver história completa" */
+.historia-extra { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease; }
+.historia-extra.revelado { max-height: 500px; opacity: 1; }
+.btn-secundario { margin-top: 6px; }
+
+/* Inventário: filtros, contador e cards dinâmicos */
+.inventario-topo { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-filtro.ativo { background: #3b2a08; color: var(--cor-texto-dourado); box-shadow: inset 0 0 8px rgba(197, 155, 39, 0.4); }
+.contador-itens { font-size: 0.8rem; color: var(--cor-texto-mutado); }
+.card-dinamico { position: relative; opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.card-dinamico.revelado { opacity: 1; transform: none; }
+.icone-item { font-size: 2.6rem; color: var(--cor-texto-dourado); line-height: 70px; }
+.btn-fav { position: absolute; top: 6px; right: 6px; background: none; border: none; color: var(--cor-texto-mutado); cursor: pointer; font-size: 1rem; }
+.btn-fav.ativo { color: #ef4444; }
+
+/* XP */
+.xp-controles { margin-top: 15px; }
+.xp-controles .btn-guilda { margin-bottom: 10px; }
+.msg-xp { font-size: 0.8rem; color: var(--cor-texto-mutado); min-height: 1.2em; margin: 0; }
+.msg-xp.levelup { color: #4ade80; font-weight: 600; font-size: 0.95rem; animation: pulsar 0.6s ease 2; }
+@keyframes pulsar { 50% { transform: scale(1.06); } }
+
+/* Formulário: estados de erro / sucesso */
+.obrig { color: #f87171; }
+.erro { color: #f87171; font-size: 0.78rem; min-height: 1.1em; margin-top: 4px; }
+.campo.invalido input, .campo.invalido select, .campo.invalido textarea { border-color: #ef4444; }
+.campo.valido input, .campo.valido select, .campo.valido textarea { border-color: #22c55e; }
+.status-form { font-size: 0.9rem; margin: 0; padding: 0; }
+.status-form.sucesso, .status-form.erro-geral, .status-form.enviando { padding: 10px 12px; border-radius: 6px; border: 1px solid; }
+.status-form.sucesso { color: #4ade80; border-color: #22c55e; background: rgba(34, 197, 94, 0.1); }
+.status-form.erro-geral { color: #f87171; border-color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+.status-form.enviando { color: var(--cor-texto-dourado); border-color: var(--cor-borda-dourada); }
+
+/* Modo noturno da guilda (classe no <body>) */
+body.modo-noturno {
+    --bg-fundo: #02030a;
+    --cor-card: #060a18;
+    --cor-borda-dourada: #8b9cf0;
+    --cor-texto-dourado: #c7d2fe;
+    --cor-texto-principal: #e5e7fb;
+    --cor-texto-mutado: #8b93b8;
+}
+body.modo-noturno .header-principal { background: #01020a; }
+body.modo-noturno .card-item-prototipo { background: #04071a; }
+
+
+/* ===== TABLET E CELULAR: menu hambúrguer ===== */
+@media (max-width: 1000px) {
+    .header-principal { flex-wrap: wrap; padding: 12px 20px; gap: 10px; }
+    .btn-menu { display: block; }
+    .menu-navegacao { display: none; flex-direction: column; width: 100%; order: 3; }
+    .menu-navegacao.aberto { display: flex; }
+    .header-direita { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; order: 4; }
+    .citacao-topo { display: none; }
+}
+
+/* ===== TABLET: layout em 1 coluna ===== */
+@media (max-width: 900px) {
+    .secao-dupla-topo, .secao-dupla-meio, .secao-dupla-baixo { grid-template-columns: 1fr; }
+    .grid-4-colunas { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== CELULAR ===== */
+    .hero-img-bg  {object-position: 70% 30%; }
+    .hero-banner { height: auto; min-height: 420px; }
+    .hero-info { padding: 20px; }
+    .hero-tags { flex-wrap: wrap; }
+    .grid-atributos-habilidades { grid-template-columns: 1fr; }
+    .sobre-conteudo { flex-direction: column; align-items: center; }
+    .links-guilda-grid { flex-direction: column; gap: 12px; }
+
+
+/* ===== CELULAR PEQUENO ===== */
+@media (max-width: 420px) {
+    .grid-4-colunas { grid-template-columns: 1fr; }
+}
+
+/* ===== Acessibilidade: reduz animações se o usuário pediu no sistema ===== */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+.img-box-prototipo img[src$="pocao_de_cura.png"] {
+    object-fit: cover;
+    border-radius: 6px;
+}
+/* Efeito ao passar o mouse nos cards (inventário e conquistas),
+   igual ao dos links de contato */
+.card-item-prototipo {
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+/* os cards do inventário já têm transição de entrada; mantemos as duas */
+.card-item-prototipo.card-dinamico {
+    transition: opacity 0.4s ease, transform 0.4s ease,
+                border-color 0.3s ease, background 0.3s ease;
+}
+
+.card-item-prototipo:hover {
+    border-color: var(--cor-borda-dourada);
+    background: #111c30;
+}
+body.modo-noturno .card-item-prototipo:hover {
+    background: #0b1230;
+}
+/* Filtros do inventário: mesmo efeito ao passar o mouse dos cards */
+.btn-filtro:not(.ativo):hover {
+    border-color: var(--cor-texto-dourado);
+    background: #111c30;
+    color: var(--cor-texto-dourado);
+}
