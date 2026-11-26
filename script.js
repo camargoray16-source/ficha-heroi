@@ -1,4 +1,4 @@
-* ==========================================================
+/* ==========================================================
    script.js — Ficha de Herói: Eliseu (Parte 2)
    Funciona nas duas páginas (index.html e contato.html):
    cada função confere se os elementos existem antes de agir.
