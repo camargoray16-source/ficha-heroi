@@ -113,7 +113,7 @@ Os testes foram feitos no modo dispositivo das DevTools do navegador (F12).
 ## 🚀 Como Executar
 
 - **Localmente:** baixe a pasta do projeto e abra o arquivo `index.html` no navegador (ou use a extensão Live Server do VS Code).
-- **Online (GitHub Pages):**file:///C:/Users/asusv/Documents/ficha-heroi-parte2.0/index.html#guilda
+- **Online (GitHub Pages):
 - **Repositório GitHub:** https://github.com/camargoray16-source/ficha-heroi
 
 > **Formulário:** o envio usa o serviço Formspree. Para enviar mensagens de verdade, substitua `seu_id_aqui` pelo ID do formulário na constante `FORM_ENDPOINT` do `script.js` e no atributo `action` do `contato.html`. Sem isso, o formulário funciona em modo demonstração (valida e mostra a mensagem "Mensagem validada! (modo demonstração...)", mas não envia e-mail).
