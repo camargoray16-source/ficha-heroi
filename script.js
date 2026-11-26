@@ -1,4 +1,4 @@
-/* ==========================================================
+* ==========================================================
    script.js — Ficha de Herói: Eliseu (Parte 2)
    Funciona nas duas páginas (index.html e contato.html):
    cada função confere se os elementos existem antes de agir.
@@ -104,10 +104,10 @@ const itens = [
     descricao: 'Um recipiente capaz de produzir recursos durante situações de necessidade.' },
   { nome: 'Pergaminho da Sabedoria', tipo: 'Consumível', raridade: 'Épico', estrelas: 3, imagem: 'imagens/pergaminho.png', icone: 'fa-scroll',
     descricao: 'Aumenta temporariamente o atributo de Sabedoria.' },
-  { nome: 'Poção de Cura', tipo: 'Consumível', raridade: 'Raro', estrelas: 2, icone: 'fa-flask',
+  { nome: 'Poção de Cura', tipo: 'Consumível', raridade: 'Raro', estrelas: 2, imagem: 'imagens/pocao_de_cura.png', icone: 'fa-flask',
     descricao: 'Restaura parte da vida de um aliado ferido.' },
-  { nome: 'Troféu da Aliança', tipo: 'Troféu', raridade: 'Épico', estrelas: 3, icone: 'fa-trophy',
-    descricao: 'Entregue a Eliseu por proteger uma comunidade inteira.' }
+  { nome: 'Troféu da Aliança', tipo: 'Troféu', raridade: 'Épico', estrelas: 3, imagem: 'imagens/trofeu_da_alianca.png', icone: 'fa-trophy',
+  descricao: 'Entregue a Eliseu por proteger uma comunidade inteira.' }
 ];
 
 function iniciarInventario() {
@@ -239,8 +239,7 @@ function iniciarXP() {
 
 // ---------- 8. FORMULÁRIO DE CONTATO ----------
 // Troque pelo seu ID real do Formspree para o envio funcionar de verdade.
-const FORM_ENDPOINT = 'https://formspree.io/f/seu_id_aqui';
-
+const FORM_ENDPOINT = 'https://formspree.io/f/mppdzrov';
 function iniciarFormulario() {
   const form = document.getElementById('form-guilda');
   if (!form) return;
