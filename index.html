@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliseu - Guardião da Aliança</title>
+    <meta name="description" content="Ficha de herói de Eliseu, Guardião da Aliança: atributos, inventário, conquistas e contato com a guilda.">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -21,16 +22,23 @@
         <span class="subtitulo-logo">Guardião da Aliança</span>
       </div>
     </div>
-    
-    <nav class="menu-navegacao">
-      <a href="#sobre" class="link-nav ativo"><i class="fa-solid fa-open"></i> Início</a>
+
+    <!-- Botão hambúrguer (visível só em telas pequenas) -->
+    <button type="button" id="btn-menu" class="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-nav">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="menu-nav" class="menu-navegacao">
+      <a href="#sobre" class="link-nav ativo"><i class="fa-solid fa-house"></i> Início</a>
       <a href="#atributos" class="link-nav"><i class="fa-solid fa-star"></i> Atributos</a>
       <a href="#inventario" class="link-nav"><i class="fa-solid fa-bag-shopping"></i> Inventário</a>
-      <a href="#guilda" class="link-nav"><i class="fa-solid fa-users"></i>  Contato com guilda</a>
+      <a href="contato.html" class="link-nav"><i class="fa-solid fa-users"></i> Contato com guilda</a>
     </nav>
 
-    <div class="citacao-topo">
-      "A verdadeira força não está na espada, mas naquilo que guia o coração."
+    <div class="header-direita">
+      <span id="saudacao" class="saudacao" aria-live="polite"></span>
+      <button type="button" id="btn-tema" class="btn-tema" aria-pressed="false"><i class="fa-solid fa-moon"></i> <span>Modo noturno</span></button>
+      <div class="citacao-topo">"A verdadeira força não está na espada, mas naquilo que guia o coração."</div>
     </div>
   </header>
 
@@ -39,7 +47,7 @@
     <!-- HERO / SOBRE O HERÓI -->
     <section id="sobre" class="secao-hero">
       <div class="hero-banner">
-       <img src="imagens/eliseu segurando o cajado.png" alt="Eliseu" class="hero-img-bg">
+        <img src="imagens/eliseu segurando o cajado.png" alt="Eliseu" class="hero-img-bg">
         <div class="hero-overlay"></div>
         <div class="hero-info">
           <h1 class="hero-titulo">ELISEU</h1>
@@ -57,7 +65,7 @@
               <i class="fa-solid fa-star"></i>
               <div>
                 <small>Nível</small>
-                <strong>25</strong>
+                <strong id="nivel-heroi">25</strong>
               </div>
             </div>
             <div class="tag-item">
@@ -83,32 +91,39 @@
       </div>
     </section>
 
-    <!-- SOBRE + ATRIBUS/HABILIDADES -->
+    <!-- SOBRE + ATRIBUTOS/HABILIDADES -->
     <section class="secao-dupla-topo">
       <!-- Bloco Sobre o Herói -->
-      <div id="atributos" class="bloco-card card-moldura">
+      <div id="sobre-heroi" class="bloco-card card-moldura">
         <h2><i class="fa-solid fa-book-open"></i> Sobre o Herói</h2>
         <div class="sobre-conteudo">
           <div class="sobre-img-box">
-            <img src="imagens/eliseu segurando o cajado.png" alt="Eliseu Retrato">
+          <img src="imagens/eliseu_retrato.png" alt="Retrato de Eliseu, profeta de capuz roxo segurando um cajado">
           </div>
           <div class="sobre-texto">
             <p>Eliseu é um jovem profeta que recebeu a missão de proteger seu povo e utilizar seus conhecimentos espirituais para ajudar aqueles que precisam.</p>
             <p>Durante sua jornada, ele descobriu que seus maiores poderes não vinham de armas, mas de sua fé, sabedoria e capacidade de proteger e curar seus aliados.</p>
             <p>Agora, como Guardião da Aliança, Eliseu percorre diferentes regiões do reino enfrentando desafios, ajudando comunidades e buscando conhecimento para fortalecer seus poderes.</p>
+
+            <!-- História completa: começa oculta, o JavaScript adiciona a classe .revelado -->
+            <div id="historia-extra" class="historia-extra" aria-hidden="true">
+              <p>Nascido em uma pequena vila às margens de um rio, Eliseu cresceu ouvindo as antigas profecias de seu povo. Ainda jovem, recebeu o chamado para guardar a Aliança e passou anos aprendendo com mestres espirituais.</p>
+              <p>Cada região visitada lhe ensinou algo novo: purificou águas contaminadas, multiplicou mantimentos para famílias famintas e alertou aliados sobre perigos que ninguém mais via.</p>
+            </div>
+            <button type="button" id="btn-historia" class="btn-secundario" aria-expanded="false" aria-controls="historia-extra">Ver história completa</button>
           </div>
         </div>
       </div>
 
       <!-- Bloco Atributos e Habilidades -->
-      <div class="bloco-card card-moldura">
+      <div id="atributos" class="bloco-card card-moldura">
         <h2><i class="fa-solid fa-star"></i> Atributos & Habilidades</h2>
         <div class="grid-atributos-habilidades">
-          
+
           <!-- Atributos -->
           <div class="coluna-atributos">
             <h3><i class="fa-solid fa-star"></i> Atributos</h3>
-            
+
             <div class="item-bar">
               <div class="bar-info">
                 <span><i class="fa-solid fa-book-open icon-blue"></i> Sabedoria</span>
@@ -161,7 +176,7 @@
           <!-- Habilidades -->
           <div class="coluna-habilidades">
             <h3>Habilidades</h3>
-            
+
             <div class="hab-item">
               <div class="hab-icon blue-bg"><i class="fa-solid fa-droplet"></i></div>
               <div>
@@ -209,52 +224,18 @@
 
     <!-- INVENTÁRIO + STATUS -->
     <section id="inventario" class="secao-dupla-meio">
-      <!-- Inventário em 4 colunas como no protótipo -->
       <div class="bloco-card card-moldura inventario-bloco">
         <h2><i class="fa-solid fa-bag-shopping"></i> Inventário</h2>
-        <div class="grid-4-colunas">
 
-          <div class="card-item-prototipo">
-            <div class="img-box-prototipo">
-              <img src="imagens/manto.png" alt="Manto do Guardião">
-            </div>
-            <h3>Manto do Guardião</h3>
-            <span class="raridade lendario">Lendário</span>
-            <div class="estrelas">★★★</div>
-            <p>Um manto mágico que aumenta a resistência do personagem contra ataques espirituais.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="img-box-prototipo">
-              <img src="imagens/vaso.png" alt="Vaso da Abundância">
-            </div>
-            <h3>Vaso da Abundância</h3>
-            <span class="raridade raro">Raro</span>
-            <div class="estrelas">★★</div>
-            <p>Um recipiente capaz de produzir recursos durante situações de necessidade.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="img-box-prototipo">
-              <img src="imagens/pergaminho.png" alt="Pergaminho da Sabedoria">
-            </div>
-            <h3>Pergaminho da Sabedoria</h3>
-            <span class="raridade epico">Épico</span>
-            <div class="estrelas">★★★</div>
-            <p>Aumenta temporariamente o atributo de Sabedoria.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="img-box-prototipo">
-              <img src="imagens/cajado.png" alt="Cajado do Profeta">
-            </div>
-            <h3>Cajado do Profeta</h3>
-            <span class="raridade lendario">Lendário</span>
-            <div class="estrelas">★★★</div>
-            <p>Canaliza a energia espiritual do Guardião.</p>
-          </div>
-
+        <div class="inventario-topo">
+          <!-- Botões de filtro e contador: criados/atualizados pelo script.js -->
+          <div id="filtros-inventario" class="filtros" role="group" aria-label="Filtrar itens por tipo"></div>
+          <span id="contador-itens" class="contador-itens" aria-live="polite"></span>
         </div>
+
+        <!-- Cards gerados pelo script.js a partir do array "itens" -->
+        <div id="lista-inventario" class="grid-4-colunas"></div>
+        <noscript><p class="contador-itens">Ative o JavaScript para ver o inventário do herói.</p></noscript>
       </div>
 
       <!-- Status do Personagem -->
@@ -300,53 +281,24 @@
             <div class="status-bar-container">
               <div class="status-head">
                 <span>Experiência</span>
-                <span>2.450 / 3.000</span>
+                <span id="xp-texto">2.450 / 3.000</span>
               </div>
-              <div class="bar-bg"><div class="bar-fill blue" style="width: 80%;"></div></div>
+              <div class="bar-bg"><div id="xp-barra" class="bar-fill blue" style="width: 80%;"></div></div>
             </div>
           </div>
 
+        </div>
+
+        <!-- Botão de XP e mensagem de feedback -->
+        <div class="xp-controles">
+          <button type="button" id="btn-xp" class="btn-guilda"><i class="fa-solid fa-hand-sparkles"></i> Completar missão (+150 XP)</button>
+          <p id="msg-xp" class="msg-xp" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>
 
     <!-- CONQUISTAS + GUILDA -->
     <section id="conquistas" class="secao-dupla-baixo">
-      <!-- Conquistas em 4 colunas -->
-      <div class="bloco-card card-moldura conquistas-bloco">
-        <h2><i class="fa-solid fa-trophy"></i> Conquistas</h2>
-        <div class="grid-4-colunas">
-
-          <div class="card-item-prototipo">
-            <div class="icon-conquista"><i class="fa-solid fa-shield-cat"></i></div>
-            <h3>Guardião da Aliança</h3>
-            <p>Protegeu uma comunidade durante uma grande ameaça.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="icon-conquista"><i class="fa-solid fa-droplet"></i></div>
-            <h3>Senhor das Águas</h3>
-            <p>Purificou águas contaminadas usando seus poderes.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="icon-conquista"><i class="fa-solid fa-jar"></i></div>
-            <h3>Milagre da Abundância</h3>
-            <p>Ajudou uma família em uma situação de necessidade.</p>
-          </div>
-
-          <div class="card-item-prototipo">
-            <div class="icon-conquista"><i class="fa-solid fa-eye"></i></div>
-            <h3>Visão do Profeta</h3>
-            <p>Descobriu um perigo oculto antes que seus aliados fossem surpreendidos.</p>
-          </div>
-
-        </div>
-      </div>
-
-   <!-- CONQUISTAS + GUILDA -->
-    <section id="conquistas" class="secao-dupla-baixo">
-      <!-- Conquistas em 4 colunas -->
       <div class="bloco-card card-moldura conquistas-bloco">
         <h2><i class="fa-solid fa-trophy"></i> Conquistas</h2>
         <div class="grid-4-colunas">
@@ -382,11 +334,11 @@
       <div id="guilda" class="bloco-card card-moldura guilda-bloco">
         <h2><i class="fa-solid fa-users"></i> Contato com a Guilda</h2>
         <p class="guilda-sub">Entre em contato e faça parte da nossa jornada!</p>
-        
+
         <a href="contato.html" class="btn-guilda">Entrar em contato</a>
 
         <div class="links-guilda-grid">
-          <a href="https://discord.com" target="_blank" class="link-guilda-item">
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="link-guilda-item">
             <i class="fa-brands fa-discord"></i>
             <div>
               <strong>Discord</strong>
@@ -394,7 +346,7 @@
             </div>
           </a>
 
-          <a href="https://github.com" target="_blank" class="link-guilda-item">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-guilda-item">
             <i class="fa-brands fa-github"></i>
             <div>
               <strong>GitHub</strong>
@@ -413,15 +365,22 @@
       </div>
     </section>
 
-  </main>  
-
-        
+  </main>
 
   <!-- RODAPÉ -->
   <footer class="rodape-principal">
     <p>✦ Juntos por um reino mais forte ✦ Guilda Eliseu ✦</p>
   </footer>
-<!-- O script fica no fim do body para o HTML já existir quando o JS rodar -->
+
+  <!-- O script fica no fim do body para o HTML já existir quando o JS rodar -->
   <script src="script.js"></script>
 </body>
 </html>
+  
+        
+             
+
+            
+           
+     
+           
