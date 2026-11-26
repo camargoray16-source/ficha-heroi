@@ -67,6 +67,7 @@ body {
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 6px;
+    border: 1px solid transparent;
     font-size: 0.9rem;
     transition: 0.3s;
 }
@@ -121,18 +122,21 @@ body {
 /* HERO SECTION */
 .hero-banner {
     position: relative;
-    height: 300px;
+    min-height: 300px;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--cor-borda-dourada);
 }
 
 .hero-img-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: center 30%;   /* era "top": agora a faixa visível desce um pouco */
 }
+
 
 .hero-overlay {
     position: absolute;
@@ -141,9 +145,8 @@ body {
 }
 
 .hero-info {
-    position: absolute;
-    top: 30px;
-    left: 40px;
+    position: relative;
+    padding: 30px 40px;
     max-width: 600px;
 }
 
@@ -164,6 +167,7 @@ body {
 
 .hero-tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -219,8 +223,8 @@ body {
 }
 
 .sobre-img-box {
-    width: 120px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border: 1px solid var(--cor-borda-dourada);
     border-radius: 6px;
     overflow: hidden;
@@ -231,6 +235,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .sobre-texto p {
@@ -377,7 +382,7 @@ body {
 }
 
 .card-item-prototipo p {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--cor-texto-mutado);
     line-height: 1.2;
     margin: 0;
@@ -426,7 +431,7 @@ body {
 }
 
 /* GUILDA */
-guilda-sub {
+.guilda-sub {
     font-size: 0.8rem;
     color: var(--cor-texto-mutado);
     margin-top: -10px;
@@ -442,29 +447,54 @@ guilda-sub {
   border-radius: 6px;
   color: white;
   font-weight: bold;
-  text-align: center;              /* Centraliza o texto dentro do botão */
-  text-decoration: none;           /* Remove o sublinhado do link */
+  text-align: center;              
+  text-decoration: none;           
   cursor: pointer;
-  margin-top: 15px;                /* Cria espaço em cima do botão */
-  margin-bottom: 25px;             /* Empurra os ícones do Discord/GitHub para baixo */
+  margin-top: 15px;                
+  margin-bottom: 25px;             
 }
 
 .links-guilda-grid {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .link-guilda-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
+    padding: 10px 14px;
     color: var(--cor-texto-principal);
     text-decoration: none;
+    background: #0a111e;
+    border: 1px solid rgba(197, 155, 39, 0.4);
+    border-radius: 6px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.link-guilda-item:hover {
+    border-color: var(--cor-borda-dourada);
+    background: #111c30;
 }
 
 .link-guilda-item i {
-    font-size: 1.2rem;
+    width: 28px;
+    text-align: center;
+    font-size: 1.4rem;
     color: var(--cor-texto-dourado);
+}
+
+.link-guilda-item strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.link-guilda-item small {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--cor-texto-mutado);
+    word-break: break-word;
 }
 
 /* ===== ESTILIZAÇÃO DO FORMULÁRIO DE CONTATO ===== */
@@ -490,13 +520,13 @@ guilda-sub {
 .campo textarea {
   width: 100%;
   padding: 10px 14px;
-  background-color: #1e293b;                /* Fundo escuro */
+  background-color: #1e293b;               
   border: 1px solid var(--cor-borda-dourada, #475569);
   border-radius: 6px;
   color: #f8fafc;
   font-family: inherit;
   font-size: 0.95rem;
-  box-sizing: border-box;                    /* Impede o campo de sair para fora do card */
+  box-sizing: border-box;                    
   transition: border-color 0.3s ease;
 }
 
@@ -505,7 +535,7 @@ guilda-sub {
 .campo select:focus,
 .campo textarea:focus {
   outline: none;
-  border-color: #d97706;                     /* Borda dourada ao focar */
+  border-color: #d97706;                    
 }
 
 /* Fundo das opções do menu suspenso */
@@ -545,6 +575,8 @@ guilda-sub {
     font-size: 0.85rem;
     margin-top: 20px;
 }
+
+
 /* ==========================================================
    PARTE 2 — ESTADOS DINÂMICOS (o JavaScript alterna as classes)
    ========================================================== */
@@ -648,14 +680,15 @@ body.modo-noturno .card-item-prototipo { background: #04071a; }
 }
 
 /* ===== CELULAR ===== */
-    .hero-img-bg  {object-position: 70% 30%; }
+@media (max-width: 600px) {
+    .hero-img-bg { object-position: 70% 30%; }
     .hero-banner { height: auto; min-height: 420px; }
     .hero-info { padding: 20px; }
     .hero-tags { flex-wrap: wrap; }
     .grid-atributos-habilidades { grid-template-columns: 1fr; }
     .sobre-conteudo { flex-direction: column; align-items: center; }
     .links-guilda-grid { flex-direction: column; gap: 12px; }
-
+}
 
 /* ===== CELULAR PEQUENO ===== */
 @media (max-width: 420px) {
@@ -667,7 +700,8 @@ body.modo-noturno .card-item-prototipo { background: #04071a; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
-.img-box-prototipo img[src$="pocao_de_cura.png"] {
+.img-box-prototipo img[src$="pocao_de_cura.png"],
+.img-box-prototipo img[src$="trofeu_da_alianca.png"] {
     object-fit: cover;
     border-radius: 6px;
 }
@@ -696,3 +730,7 @@ body.modo-noturno .card-item-prototipo:hover {
     background: #111c30;
     color: var(--cor-texto-dourado);
 }
+   
+ 
+    
+ 
