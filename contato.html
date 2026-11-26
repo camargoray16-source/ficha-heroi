@@ -21,75 +21,89 @@
         <span class="subtitulo-logo">Guardião da Aliança</span>
       </div>
     </div>
-    
-    <nav class="menu-navegacao">
+
+    <!-- Botão hambúrguer (visível só em telas pequenas) -->
+    <button type="button" id="btn-menu" class="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-nav">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="menu-nav" class="menu-navegacao">
       <a href="index.html#sobre" class="link-nav"><i class="fa-solid fa-house"></i> Início</a>
       <a href="index.html#atributos" class="link-nav"><i class="fa-solid fa-star"></i> Atributos</a>
       <a href="index.html#inventario" class="link-nav"><i class="fa-solid fa-bag-shopping"></i> Inventário</a>
       <a href="contato.html" class="link-nav ativo"><i class="fa-solid fa-users"></i> Contato com guilda</a>
     </nav>
 
-    <div class="citacao-topo">
-      "A verdadeira força não está na espada, mas naquilo que guia o coração."
+    <div class="header-direita">
+      <span id="saudacao" class="saudacao" aria-live="polite"></span>
+      <button type="button" id="btn-tema" class="btn-tema" aria-pressed="false"><i class="fa-solid fa-moon"></i> <span>Modo noturno</span></button>
+      <div class="citacao-topo">"A verdadeira força não está na espada, mas naquilo que guia o coração."</div>
     </div>
   </header>
 
   <main class="conteudo-principal">
     <section class="bloco-card card-moldura guilda-bloco">
-      
+
       <h2><i class="fa-solid fa-paper-plane"></i> Contato com a Guilda</h2>
       <p class="guilda-sub">Envie uma mensagem direta ao Profeta Místico e à sua ordem.</p>
 
-     <!-- 1. COLE O IFRAME AQUI (ANTES DO FORM) -->
-    <iframe name="iframe-envio" style="display:none;" onload="if(window.formularioEnviado){ document.getElementById('form-guilda').reset(); alert('Mensagem enviada com sucesso!'); }"></iframe>
+      <!-- novalidate: desliga a validação padrão do navegador; quem valida é o JavaScript -->
+      <form id="form-guilda" class="form-guilda" action="https://formspree.io/f/mppdzrov" method="POST" novalidate>
 
-    <!-- 2. ALTERE A TAG FORM PARA FICAR COM TARGET E ID -->
-    <form id="form-guilda" action="https://formspree.io/f/seu_id_aqui" method="POST" target="iframe-envio" onclick="window.formularioEnviado = true;" class="form-guilda">
-      
-      <div class="campo">
-        <label for="nome">Seu Nome ou Título:</label>
-        <input type="text" id="nome" name="nome" placeholder="Ex: Guerreiro de Galiléia" required>
-      </div>
+        <div class="campo">
+          <label for="nome">Seu Nome ou Título: <span class="obrig">*</span></label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: Guerreiro de Galiléia" autocomplete="name" required>
+          <small class="erro" id="erro-nome"></small>
+        </div>
 
-      <div class="campo">
-        <label for="email">Seu E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="seuemail@reino.com" required>
-      </div>
+        <div class="campo">
+          <label for="email">Seu E-mail: <span class="obrig">*</span></label>
+          <input type="email" id="email" name="email" placeholder="seuemail@reino.com" autocomplete="email" required>
+          <small class="erro" id="erro-email"></small>
+        </div>
 
-      <div class="campo">
-        <label for="assunto">Assunto da Convocação:</label>
-        <select id="assunto" name="assunto" required>
-          <option value="" disabled selected>Selecione uma opção...</option>
-          <option value="Pedido de Cura">Pedido de Cura e Purificação</option>
-          <option value="Proposta de Aliança">Proposta de Aliança entre Guildas</option>
-          <option value="Aviso de Perigo">Aviso de Perigo Ameaçando o Reino</option>
-          <option value="Solicitação de Recursos">Solicitação de Recursos e Mantimentos</option>
-          <option value="Outro Assunto">Outro Assunto</option>
-        </select>
-      </div>
+        <div class="campo">
+          <label for="assunto">Assunto da Convocação: <span class="obrig">*</span></label>
+          <select id="assunto" name="assunto" required>
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="Pedido de Cura">Pedido de Cura e Purificação</option>
+            <option value="Proposta de Aliança">Proposta de Aliança entre Guildas</option>
+            <option value="Aviso de Perigo">Aviso de Perigo Ameaçando o Reino</option>
+            <option value="Solicitação de Recursos">Solicitação de Recursos e Mantimentos</option>
+            <option value="Outro Assunto">Outro Assunto</option>
+          </select>
+          <small class="erro" id="erro-assunto"></small>
+        </div>
 
-      <div class="campo">
-        <label for="mensagem">Sua Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva os detalhes da sua mensagem para o Guardião..." required></textarea>
-      </div>
+        <div class="campo">
+          <label for="mensagem">Sua Mensagem: <span class="obrig">*</span></label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva os detalhes da sua mensagem para o Guardião..." required></textarea>
+          <small class="erro" id="erro-mensagem"></small>
+        </div>
 
-      <div class="botoes-formulario">
-        <button type="submit" class="btn-guilda">
-          <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
-        </button>
-        <a href="index.html#guilda" class="btn-guilda-voltar">
-          <i class="fa-solid fa-arrow-left"></i> Voltar ao Início
-        </a>
-      </div>
+        <!-- Mensagem geral de sucesso / erro (sem alert) -->
+        <p id="status-form" class="status-form" role="status" aria-live="polite"></p>
 
-    </form>
-  </section>
-</main>
+        <div class="botoes-formulario">
+          <button type="submit" class="btn-guilda" id="btn-enviar">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+          </button>
+          <a href="index.html#guilda" class="btn-guilda-voltar">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao Início
+          </a>
+        </div>
+      </form>
+    </section>
+  </main>
 
   <!-- RODAPÉ -->
   <footer class="rodape-principal">
     <p>✦ Juntos por um reino mais forte ✦ Guilda Eliseu ✦</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
+     
+       
+    
